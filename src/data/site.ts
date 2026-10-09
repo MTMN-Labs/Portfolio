@@ -47,8 +47,6 @@ export type Member = {
   role: string;
   line: string;
   bio: string;
-  // optional short list of concrete things they built, shown under the bio
-  highlights?: string[];
   skills: string[];
   photo: string;
   // where the face sits in the photo, used for object-position
@@ -66,13 +64,7 @@ export const team: Member[] = [
     first: "Mehdi",
     role: "Agentic AI and Backend Engineer",
     line: "Agent memory, LLM security, multi-tenant platforms",
-    bio: "Agentic AI engineer on a multi-tenant agentic automation platform built on FastAPI, Temporal, LangGraph, PostgreSQL with pgvector, Redis and Azure Container Apps, spanning 55 feature modules and 41 third party connectors. Over two years of industry experience across generative AI, data science and enterprise backends, including a retail banking platform used by more than seven million people. His final year project, SecureSphere-LLM, is a security middleware that inspects prompts between developer tools and LLMs. A four time gold medalist in computer science.",
-    highlights: [
-      "Designed and shipped the platform's self-improving agent memory: semantic recall over pgvector with HNSW cosine search, fact extraction behind a single write chokepoint, embedding-level deduplication, LLM-adjudicated contradiction retirement, importance reinforcement and time decay.",
-      "Built security into the memory layer rather than onto it: a secret-pattern guard that refuses to persist keys and credentials, refusal of text lifted from tool output, and a row-level-security audit table recording every write, cap and refusal.",
-      "Built a two-arm evaluation harness that runs the same cases with memory on and off to measure whether memory actually improves answers.",
-      "Acts as the platform's agentic security reviewer: prompt injection and tool-description poisoning across MCP clients and servers, sandbox escape in code-execution nodes, capability gating, OAuth least privilege and multi-tenant isolation.",
-    ],
+    bio: "Agentic AI engineer with over two years of industry experience across generative AI, data science and enterprise backends. He works on a multi-tenant agentic automation platform built on FastAPI, Temporal, LangGraph, PostgreSQL with pgvector, Redis and Azure Container Apps, spanning 55 feature modules and 41 third party connectors, where he designed and shipped the self-improving agent memory: semantic recall over pgvector, fact extraction behind a single write chokepoint, deduplication, contradiction retirement and time decay, with security built in through a secret-pattern guard, refusal of text lifted from tool output and a full audit trail. He also acts as the platform's agentic security reviewer, covering prompt injection, tool poisoning across MCP clients and servers, sandbox escape, capability gating and multi-tenant isolation. Earlier he engineered on a retail banking platform used by more than seven million people. His final year project, SecureSphere-LLM, is a security middleware that inspects prompts between developer tools and LLMs. A four time gold medalist in computer science.",
     skills: ["Python", "FastAPI", "LangGraph", "Temporal", "pgvector", "MCP", "LLM Guardrails", "Redis", "Azure", "PostgreSQL"],
     photo: "/team/mehdi.png",
     focus: "50% 20%",

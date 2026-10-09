@@ -73,17 +73,6 @@ export function Team() {
                 <p className="mt-2 text-mute">{m.line}</p>
                 <p className="mt-7 text-base leading-relaxed md:text-lg">{m.bio}</p>
 
-                {m.highlights?.length ? (
-                  <ul className="mt-6 space-y-3 border-t border-line pt-6">
-                    {m.highlights.map((h) => (
-                      <li key={h} className="grid grid-cols-[20px_1fr] gap-3 text-sm text-mute">
-                        <span className="mt-2.5 h-px w-4 bg-accent" />
-                        <span className="leading-relaxed">{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-
                 <div className="mt-8 flex flex-wrap gap-2">
                   {m.skills.map((s) => (
                     <span key={s} className="rounded-full border border-line px-3 py-1 text-xs text-mute">
