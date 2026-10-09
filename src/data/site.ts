@@ -19,7 +19,6 @@ export const site = {
     { value: "4", label: "Engineers" },
     { value: "3", label: "Products in build" },
     { value: "25+", label: "Projects shipped" },
-    { value: "7M+", label: "Users reached" },
   ],
   stack: [
     "Next.js",
@@ -48,6 +47,8 @@ export type Member = {
   role: string;
   line: string;
   bio: string;
+  // optional short list of concrete things they built, shown under the bio
+  highlights?: string[];
   skills: string[];
   photo: string;
   // where the face sits in the photo, used for object-position
@@ -63,10 +64,16 @@ export const team: Member[] = [
     slug: "mehdi",
     name: "Syed Muhammad Mehdi Abidi",
     first: "Mehdi",
-    role: "AI and Backend Engineer",
-    line: "LLM applications, RAG, enterprise backends, CI/CD",
-    bio: "Software and AI engineer with over two years of industry experience across data science, generative AI and enterprise backend systems. He has engineered on a retail banking platform used by more than seven million people, built CI/CD pipelines that removed manual deployment work entirely, and shipped LLM applications with RAG, LangChain and layered guardrails. His final year project, SecureSphere-LLM, is a security middleware that inspects prompts between developer tools and LLMs. A four time gold medalist in computer science and president of his university's IEEE student branch.",
-    skills: ["Python", "FastAPI", "Django", "LangChain", "RAG", "LLM Guardrails", "PyTorch", "Jenkins", "Azure", "PostgreSQL"],
+    role: "Agentic AI and Backend Engineer",
+    line: "Agent memory, LLM security, multi-tenant platforms",
+    bio: "Agentic AI engineer on a multi-tenant agentic automation platform built on FastAPI, Temporal, LangGraph, PostgreSQL with pgvector, Redis and Azure Container Apps, spanning 55 feature modules and 41 third party connectors. Over two years of industry experience across generative AI, data science and enterprise backends, including a retail banking platform used by more than seven million people. His final year project, SecureSphere-LLM, is a security middleware that inspects prompts between developer tools and LLMs. A four time gold medalist in computer science.",
+    highlights: [
+      "Designed and shipped the platform's self-improving agent memory: semantic recall over pgvector with HNSW cosine search, fact extraction behind a single write chokepoint, embedding-level deduplication, LLM-adjudicated contradiction retirement, importance reinforcement and time decay.",
+      "Built security into the memory layer rather than onto it: a secret-pattern guard that refuses to persist keys and credentials, refusal of text lifted from tool output, and a row-level-security audit table recording every write, cap and refusal.",
+      "Built a two-arm evaluation harness that runs the same cases with memory on and off to measure whether memory actually improves answers.",
+      "Acts as the platform's agentic security reviewer: prompt injection and tool-description poisoning across MCP clients and servers, sandbox escape in code-execution nodes, capability gating, OAuth least privilege and multi-tenant isolation.",
+    ],
+    skills: ["Python", "FastAPI", "LangGraph", "Temporal", "pgvector", "MCP", "LLM Guardrails", "Redis", "Azure", "PostgreSQL"],
     photo: "/team/mehdi.png",
     focus: "50% 20%",
     linkedin: "https://linkedin.com/in/mehdiabidii",

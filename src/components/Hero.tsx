@@ -51,7 +51,7 @@ export function Hero() {
           </motion.div>
 
           <motion.dl custom={4} variants={rise} initial="hidden" animate="show"
-            className="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
+            className="mt-12 grid grid-cols-3 gap-x-8 gap-y-6">
             {site.stats.map((s) => (
               <div key={s.label} className="border-l border-accent/70 pl-4">
                 <dt className="font-display text-2xl font-bold md:text-3xl">{s.value}</dt>
