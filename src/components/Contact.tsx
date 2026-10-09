@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { site, team } from "@/data/site";
 import { Reveal, SectionHeading } from "./ui";
 
@@ -25,30 +25,25 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-6 py-28 md:px-10">
         <SectionHeading index="04" title="Contact us" text="Tell us what you are building. We reply within a working day." />
 
-        <div className="grid gap-14 lg:grid-cols-[1fr_1fr]">
+        <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <h3 className="font-display text-4xl font-bold leading-tight md:text-5xl">
               Have a project?
               <br />
               Let us talk.
             </h3>
-            <a
-              href={`mailto:${site.email}`}
-              className="group mt-8 inline-flex items-center gap-3 font-display text-xl font-semibold text-accent md:text-2xl"
-            >
-              {site.email}
-              <ArrowUpRight className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </a>
-            <p className="mt-3 text-mute">{site.location}</p>
+            <p className="mt-5 max-w-md text-mute">
+              Reach any of us directly, or send one message to the whole team with the form.
+            </p>
 
-            <ul className="mt-12 border-t border-line">
+            <ul className="mt-10 border-t border-line">
               {team.map((m) => (
-                <li key={m.slug} className="grid gap-2 border-b border-line py-4 sm:grid-cols-[1fr_auto] sm:items-center">
+                <li key={m.slug} className="grid gap-2 border-b border-line py-5 sm:grid-cols-[1fr_auto] sm:items-center">
                   <div>
                     <div className="font-semibold">{m.first}</div>
                     <div className="text-xs text-mute">{m.role}</div>
                   </div>
-                  <div className="flex gap-4 text-mute">
+                  <div className="flex gap-5 text-mute">
                     <a href={m.linkedin} target="_blank" rel="noreferrer" aria-label={`${m.first} on LinkedIn`} className="hover:text-ink">
                       <Linkedin size={18} />
                     </a>
@@ -65,7 +60,7 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <form onSubmit={submit} className="flex flex-col gap-4">
+            <form onSubmit={submit} className="flex flex-col gap-5">
               <label className="text-sm text-mute">
                 Name
                 <input
