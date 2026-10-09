@@ -5,3 +5,6 @@ out
 next-env.d.ts
 .env*
 .DS_Store
+
+# original photo drops; the site uses the copies in public/team
+photos/
