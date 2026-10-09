@@ -17,7 +17,7 @@ export const site = {
   ],
   stats: [
     { value: "4", label: "Engineers" },
-    { value: "3", label: "Products in build" },
+    { value: "2", label: "Products in build" },
     { value: "25+", label: "Projects shipped" },
   ],
   stack: [
@@ -134,28 +134,29 @@ export const projects: Project[] = [
     kicker: "Audio AI for devotional recitation",
     status: "In build",
     summary:
-      "A vocal studio for reciters of Noha, Naat, Manqabat and Soz. It listens to a take, finds probable pitch slips and tells them apart from intentional ornament by comparing each line with the other repeats of the same line, then cleans and renders the recording.",
+      "A vocal studio for reciters of Noha, Naat, Manqabat and Soz, built for the phones and rooms of Karachi. It cleans up a take, suggests pitch fixes it is sure about, leaves everything else to the reciter, and renders a finished recording. Priced for the local market first, with a global Pro tier to follow.",
     points: [
-      "Slip Finder: pitch tracked in cents against a drifting tonic, lines aligned with DTW, every flagged event comes with a reason a human can read",
-      "A full DSP chain from declip and hum removal to loudness, built on a permissive licence stack with a Python reference and golden test vectors",
-      "Web Lite runs in the browser on WebAssembly; Desktop Pro ships as a Tauri shell with a native core",
+      "Lite is an installable web app that works offline after the first visit: clean-up, recorded-space reverb, tonic fix, Slip Finder in review-only mode, humnawa thickener and 720p export, sold as a season pass through local wallets and Raast",
+      "Pro is a desktop app built on a Tauri shell with a native core: auto-fix with review, contour editor, 1080p long-form export and a commercial licence",
+      "One DSP chain from declip and hum removal to loudness, specified once in a Python reference with golden test vectors, then compiled to WebAssembly for the browser and to native code for the desktop",
+      "Validated the hard way before any build: a field month of reciter interviews, 30 real room recordings, and phone capture tests on budget Android handsets",
     ],
-    stack: ["Python", "NumPy", "librosa", "C++", "WebAssembly", "ONNX Runtime", "Tauri"],
+    stack: ["WebAssembly", "C++", "Tauri", "ONNX Runtime", "Supabase", "Cloudflare", "Python"],
   },
   {
     index: "02",
-    name: "Final Year Project",
-    kicker: "Applied AI research, placeholder",
-    status: "Docs pending",
+    name: "Slip Finder",
+    kicker: "Final year project, audio AI research",
+    status: "35 tests passing",
     summary:
-      "Placeholder. This card will describe the final year project once its documents are shared. Replace this text in src/data/site.ts.",
+      "The research engine inside Vivid Vocal Studio. It listens to a recorded recitation, works out which notes the reciter probably sang wrong by accident, and tells them apart from intentional ornament. Because a wrong fix ruins a good recitation while a missed slip costs almost nothing, it is built to stay quiet unless it is very sure.",
     points: [
-      "Problem statement and who it is for",
-      "Approach, data and models",
-      "Results and what ships",
+      "Two pitch trackers (pYIN and YIN) vote on every frame and produce a trust map, so the report says how much to believe each second of audio",
+      "Follows the reciter's drifting tonic instead of a fixed scale, and measures every note in cents from that moving Sa",
+      "Finds repeats of the same line with dynamic time warping and compares each note with the reciter's own repeats, which is how it separates a slip from a deliberate vivadi touch",
+      "Only three outcomes, keep, review or fix, with a plain language reason attached to every event; auto-fix needs the slip to be 20 to 40 cents off, held at least half a second, and contradicted by agreeing repeats",
     ],
-    stack: ["PyTorch", "FastAPI", "Next.js"],
-    placeholder: true,
+    stack: ["Python", "NumPy", "SciPy", "librosa", "DTW", "pytest"],
   },
   {
     index: "03",
