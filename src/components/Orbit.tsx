@@ -151,7 +151,7 @@ export function Orbit() {
             <motion.div
               layout="position"
               transition={spring}
-              className={`pointer-events-none absolute left-1/2 top-full w-44 -translate-x-1/2 pt-3 text-center ${
+              className={`pointer-events-none absolute left-1/2 top-full w-60 -translate-x-1/2 pt-3 text-center ${
                 isCentre ? "" : "opacity-80"
               }`}
             >
