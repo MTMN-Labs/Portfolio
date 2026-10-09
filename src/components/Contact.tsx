@@ -25,8 +25,8 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-6 py-28 md:px-10">
         <SectionHeading index="04" title="Contact us" text="Tell us what you are building. We reply within a working day." />
 
-        <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
+        <div className="grid items-stretch gap-14 lg:grid-cols-2 lg:gap-20">
+          <Reveal className="h-full">
             <h3 className="font-display text-4xl font-bold leading-tight md:text-5xl">
               Have a project?
               <br />
@@ -59,8 +59,8 @@ export function Contact() {
             </ul>
           </Reveal>
 
-          <Reveal delay={0.1}>
-            <form onSubmit={submit} className="flex flex-col gap-5">
+          <Reveal delay={0.1} className="h-full">
+            <form onSubmit={submit} className="flex h-full flex-col gap-5">
               <label className="text-sm text-mute">
                 Name
                 <input
@@ -82,14 +82,14 @@ export function Contact() {
                   placeholder="you@company.com"
                 />
               </label>
-              <label className="text-sm text-mute">
+              <label className="flex flex-1 flex-col text-sm text-mute">
                 What are you building?
                 <textarea
                   required
                   rows={6}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className={`${field} mt-2 resize-y`}
+                  className={`${field} mt-2 min-h-40 flex-1 resize-none`}
                   placeholder="A few lines about the product, the timeline and the budget range if you have one."
                 />
               </label>
