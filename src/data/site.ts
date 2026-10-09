@@ -131,15 +131,15 @@ export const projects: Project[] = [
   {
     index: "01",
     name: "Vivid Vocal Studio",
-    kicker: "Audio AI for devotional recitation",
+    kicker: "Audio AI for singers",
     status: "In build",
     summary:
-      "A vocal studio for reciters of Noha, Naat, Manqabat and Soz, built for the phones and rooms of Karachi. It cleans up a take, suggests pitch fixes it is sure about, leaves everything else to the reciter, and renders a finished recording. Priced for the local market first, with a global Pro tier to follow.",
+      "A vocal studio for singers who record on their phones in ordinary rooms. It cleans up a take, suggests pitch fixes it is sure about, leaves everything else to the singer, and renders a finished recording. Priced for emerging markets first, with a global Pro tier to follow.",
     points: [
-      "Lite is an installable web app that works offline after the first visit: clean-up, recorded-space reverb, tonic fix, Slip Finder in review-only mode, humnawa thickener and 720p export, sold as a season pass through local wallets and Raast",
-      "Pro is a desktop app built on a Tauri shell with a native core: auto-fix with review, contour editor, 1080p long-form export and a commercial licence",
+      "Lite is an installable web app that works offline after the first visit: clean-up, room reverb, key correction, Slip Finder in review-only mode, backing-voice thickener and 720p export, sold as a season pass through local payment wallets",
+      "Pro is a desktop app built on a Tauri shell with a native core: auto-fix with review, pitch contour editor, 1080p long-form export and a commercial licence",
       "One DSP chain from declip and hum removal to loudness, specified once in a Python reference with golden test vectors, then compiled to WebAssembly for the browser and to native code for the desktop",
-      "Validated the hard way before any build: a field month of reciter interviews, 30 real room recordings, and phone capture tests on budget Android handsets",
+      "Validated before any build: a month of singer interviews, real room recordings, and microphone capture tests on budget Android phones",
     ],
     stack: ["WebAssembly", "C++", "Tauri", "ONNX Runtime", "Supabase", "Cloudflare", "Python"],
   },
@@ -149,11 +149,11 @@ export const projects: Project[] = [
     kicker: "Final year project, audio AI research",
     status: "35 tests passing",
     summary:
-      "The research engine inside Vivid Vocal Studio. It listens to a recorded recitation, works out which notes the reciter probably sang wrong by accident, and tells them apart from intentional ornament. Because a wrong fix ruins a good recitation while a missed slip costs almost nothing, it is built to stay quiet unless it is very sure.",
+      "The research engine inside Vivid Vocal Studio. It listens to a recorded song, works out which notes the singer probably sang wrong by accident, and tells them apart from intentional ornament. Because a wrong fix ruins a good take while a missed slip costs almost nothing, it is built to stay quiet unless it is very sure.",
     points: [
       "Two pitch trackers (pYIN and YIN) vote on every frame and produce a trust map, so the report says how much to believe each second of audio",
-      "Follows the reciter's drifting tonic instead of a fixed scale, and measures every note in cents from that moving Sa",
-      "Finds repeats of the same line with dynamic time warping and compares each note with the reciter's own repeats, which is how it separates a slip from a deliberate vivadi touch",
+      "Follows the singer's drifting key instead of a fixed scale, and measures every note in cents from that moving reference",
+      "Finds repeats of the same line with dynamic time warping and compares each note with the singer's own repeats, which is how it separates a slip from a deliberate stylistic touch",
       "Only three outcomes, keep, review or fix, with a plain language reason attached to every event; auto-fix needs the slip to be 20 to 40 cents off, held at least half a second, and contradicted by agreeing repeats",
     ],
     stack: ["Python", "NumPy", "SciPy", "librosa", "DTW", "pytest"],
