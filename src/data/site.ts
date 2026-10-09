@@ -17,7 +17,7 @@ export const site = {
   ],
   stats: [
     { value: "4", label: "Engineers" },
-    { value: "2", label: "Products in build" },
+    { value: "3", label: "Products in build" },
     { value: "25+", label: "Projects shipped" },
   ],
   stack: [
@@ -145,18 +145,18 @@ export const projects: Project[] = [
   },
   {
     index: "02",
-    name: "Slip Finder",
-    kicker: "Final year project, audio AI research",
-    status: "35 tests passing",
+    name: "FYP Copilot",
+    kicker: "From first idea to first job",
+    status: "Pilot from November 2026",
     summary:
-      "The research engine inside Vivid Vocal Studio. It listens to a recorded song, works out which notes the singer probably sang wrong by accident, and tells them apart from intentional ornament. Because a wrong fix ruins a good take while a missed slip costs almost nothing, it is built to stay quiet unless it is very sure.",
+      "One app where a final year project group plans and does its work, every member's share is confirmed by teammates and the supervisor, and that verified record becomes a profile companies use to hire fresh graduates. Built from a survey of students whose biggest pains were teammates not pulling their weight, choosing a strong idea, and finding a job after graduation.",
     points: [
-      "Two pitch trackers (pYIN and YIN) vote on every frame and produce a trust map, so the report says how much to believe each second of audio",
-      "Follows the singer's drifting key instead of a fixed scale, and measures every note in cents from that moving reference",
-      "Finds repeats of the same line with dynamic time warping and compares each note with the singer's own repeats, which is how it separates a slip from a deliberate stylistic touch",
-      "Only three outcomes, keep, review or fix, with a plain language reason attached to every event; auto-fix needs the slip to be 20 to 40 cents off, held at least half a second, and contradicted by agreeing repeats",
+      "Group room with tasks that a teammate confirms, 30 second weekly check-ins, private share ratings three times a project, and a one screen supervisor view with a sign-off button and no account needed",
+      "Fair credit shown as a band, Core, Major or Supporting, with evidence beside it from confirmed tasks and read-only GitHub activity; students preview and can contest before anything goes public",
+      "A verified student profile and one page resume that recruiters search skills first, with university and grade filters off by default and a knock-first rule before any contact",
+      "Free for students; companies, departments and partners pay. AI coaches and checks but never writes graded work, and student data is never sold",
     ],
-    stack: ["Python", "NumPy", "SciPy", "librosa", "DTW", "pytest"],
+    stack: ["Next.js", "Supabase", "Cloudflare", "GitHub API", "Groq", "PostHog"],
   },
   {
     index: "03",
