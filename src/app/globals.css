@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #050505;
+  --color-surface: #0d0d0d;
+  --color-raised: #141414;
+  --color-line: rgba(242, 242, 242, 0.1);
+  --color-accent: #e6e6e6;
+  --color-ink: #f2f2f2;
+  --color-mute: #8a8a8a;
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* thin scrollbar that matches the theme */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a2a transparent;
+}
+
+/* faint grid behind the hero */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(242, 242, 242, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 242, 242, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 70% 30%, #000 20%, transparent 70%);
+}
+
+/* slow rotation for the orbit rings */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin-slow 90s linear infinite;
+}
+.spin-slower {
+  animation: spin-slow 160s linear infinite reverse;
+}
+
+/* ticker */
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker {
+  animation: ticker 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin-slow,
+  .spin-slower,
+  .ticker {
+    animation: none;
+  }
+}
