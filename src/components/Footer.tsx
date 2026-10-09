@@ -11,7 +11,6 @@ export function Footer() {
         <div>
           {new Date().getFullYear()} {site.name}. {site.location}.
         </div>
-        <div>Built with Next.js, Tailwind and Framer Motion.</div>
       </div>
     </footer>
   );
