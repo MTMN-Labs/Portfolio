@@ -20,6 +20,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   background: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-body);
