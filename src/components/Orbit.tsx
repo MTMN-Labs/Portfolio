@@ -12,10 +12,10 @@ const PERIOD_MS = 3000;
 // so every PERIOD_MS the next member moves into the middle and the
 // previous centre slides out to a satellite position.
 const SLOTS = [
-  { x: 50, y: 50, size: 38 },
-  { x: 21, y: 32, size: 21 },
-  { x: 80, y: 21, size: 21 },
-  { x: 77, y: 79, size: 21 },
+  { x: 50, y: 50, size: 44 },
+  { x: 19, y: 30, size: 24 },
+  { x: 82, y: 19, size: 24 },
+  { x: 79, y: 80, size: 24 },
 ];
 
 // Deterministic star field so the server and client render the same dots.
@@ -66,7 +66,7 @@ export function Orbit() {
 
   return (
     <div
-      className="relative mx-auto aspect-square w-full max-w-[600px] select-none"
+      className="relative mx-auto aspect-square w-full max-w-[560px] select-none sm:max-w-[640px] lg:max-w-[720px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-label="MTMN Labs team orbit"
@@ -145,7 +145,7 @@ export function Orbit() {
                 isCentre ? "border-accent" : "border-ink/40 group-hover:border-accent"
               }`}
             >
-              <Avatar member={m} sizes="(min-width: 768px) 240px, 40vw" priority={i === 0} />
+              <Avatar member={m} sizes="(min-width: 1024px) 320px, 45vw" priority={i === 0} />
             </motion.div>
 
             <motion.div
@@ -155,7 +155,7 @@ export function Orbit() {
                 isCentre ? "" : "opacity-80"
               }`}
             >
-              <div className={`font-display font-semibold ${isCentre ? "text-sm md:text-base" : "text-xs"}`}>
+              <div className={`font-display font-semibold ${isCentre ? "text-base md:text-lg" : "text-xs md:text-sm"}`}>
                 {isCentre ? m.name.split(" ").slice(-2).join(" ") : m.first}
               </div>
               {isCentre ? (
