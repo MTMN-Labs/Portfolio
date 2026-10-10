@@ -58,7 +58,7 @@ export function Team() {
               className="grid cursor-grab gap-10 active:cursor-grabbing lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
             >
               <div className="group relative aspect-[4/5] max-h-[560px] overflow-hidden rounded-lg border border-line">
-                <Avatar member={m} sizes="(min-width: 1024px) 520px, 90vw" />
+                <Avatar member={m} sizes="(min-width: 1024px) 520px, 90vw" touchColor />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg via-bg/60 to-transparent p-6 pt-20">
                   <div className="font-mono text-xs uppercase tracking-[0.3em] text-mute">
                     0{active + 1} / 0{count}

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Devices with no hover (phones, tablets). Hover styles never fire there,
+   so these variants give the in-focus photo its colour without one. */
+@custom-variant touch (@media (hover: none));
+
 @theme {
   --color-bg: #050505;
   --color-surface: #0d0d0d;

@@ -145,7 +145,7 @@ export function Orbit() {
                 isCentre ? "border-accent" : "border-ink/40 group-hover:border-accent"
               }`}
             >
-              <Avatar member={m} sizes="(min-width: 1024px) 320px, 45vw" priority={i === 0} />
+              <Avatar member={m} sizes="(min-width: 1024px) 320px, 45vw" priority={i === 0} touchColor={isCentre} />
             </motion.div>
 
             <motion.div
